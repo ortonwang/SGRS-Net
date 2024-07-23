@@ -3,7 +3,7 @@
 This repository is for our paper: 'Synergy-Guided Regional Supervision of Pseudo Labels for Semi-Supervised Medical Image Segmentation'.
 
 #Data:
-You could refer [SSL4MIS](https://github.com/ycwu1997/MC-Net) or [Co-BioNet](https://github.com/himashi92/Co-BioNet) for the preprocessed LA and Pancreas-CT Dataset.
+You could refer [MC-Net](https://github.com/ycwu1997/MC-Net) or [Co-BioNet](https://github.com/himashi92/Co-BioNet) for the preprocessed LA and Pancreas-CT Dataset and refer [SSL4MIS](https://github.com/HiLab-git/SSL4MIS) for BraTS2019 dataset.
 
 #Training:
 put the dataset in the LA folder, 
