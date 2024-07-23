@@ -8,9 +8,9 @@ You could refer [MC-Net](https://github.com/ycwu1997/MC-Net) or [Co-BioNet](http
 #Training:
 put the dataset in the LA folder, 
 --Data 
-----LA
-------2018LA_Seg_Training Set
---------***/mri_norm2.h5
+----LA  
+------2018LA_Seg_Training Set  
+--------***/mri_norm2.h5  
 
 ----Pancreas
 ------Pancreas_h5
