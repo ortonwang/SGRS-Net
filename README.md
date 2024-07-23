@@ -3,7 +3,7 @@
 This repository is for our paper: 'Synergy-Guided Regional Supervision of Pseudo Labels for Semi-Supervised Medical Image Segmentation'.
 
 #Data:
-You could refer https://github.com/ycwu1997/MC-Net or https://github.com/himashi92/Co-BioNet for the preprocessed LA Dataset.
+You could refer [SSL4MIS](https://github.com/ycwu1997/MC-Net) or [Co-BioNet](https://github.com/himashi92/Co-BioNet) for the preprocessed LA and Pancreas-CT Dataset.
 
 #Training:
 put the dataset in the LA folder, 
