@@ -9,8 +9,6 @@ You could refer [MC-Net](https://github.com/ycwu1997/MC-Net) or [Co-BioNet](http
 put the dataset in the LA folder, 
 --Data
 ----LA
-test.list
-
 ------2018LA_Seg_Training Set
 --------***/mri_norm2.h5
 
@@ -23,6 +21,7 @@ test.list
 --------BraTS19_****.h5
 
 ```
+cd code/
 python train.py --labelnum 4 --gpu 0  --exp model1
 python test_3D.py --exp model1 --gpu 0
 ```
