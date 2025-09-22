@@ -28,3 +28,17 @@ python test_3D.py --exp model1 --gpu 0
       
 ### Acknowledgements:
 Our code is origin from [SSL4MIS](https://github.com/HiLab-git/SSL4MIS) and [MC-Net](https://https://github.com/ycwu1997/MC-Net).Thanks for these authors for their valuable works.
+
+### Citation
+'''
+@InProceedings{ WanTao_SynergyGuided_MICCAI2025,
+                 author = { Wang, Tao AND Zhang, Xinlin AND Chen, Yuanbin AND Zhou, Yuanbo AND Zhao, Longxuan AND Tan, Tao AND Tong, Tong },
+                 title = { { Synergy-Guided Regional Supervision of Pseudo Labels for Semi-Supervised Medical Image Segmentation } }, 
+                 booktitle = {Medical Image Computing and Computer Assisted Intervention -- MICCAI 2025},
+                 year = {2025},
+                 publisher = {Springer Nature Switzerland},
+                 volume = { LNCS 15967 },
+                 month = {October},
+                 pages = { 530 -- 540 },
+              }
+'''
