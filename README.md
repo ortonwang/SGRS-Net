@@ -31,14 +31,13 @@ Our code is origin from [SSL4MIS](https://github.com/HiLab-git/SSL4MIS) and [MC-
 
 ### Citation
 ```
-@InProceedings{ WanTao_SynergyGuided_MICCAI2025,
-                 author = { Wang, Tao AND Zhang, Xinlin AND Chen, Yuanbin AND Zhou, Yuanbo AND Zhao, Longxuan AND Tan, Tao AND Tong, Tong },
-                 title = { { Synergy-Guided Regional Supervision of Pseudo Labels for Semi-Supervised Medical Image Segmentation } }, 
-                 booktitle = {Medical Image Computing and Computer Assisted Intervention -- MICCAI 2025},
-                 year = {2025},
-                 publisher = {Springer Nature Switzerland},
-                 volume = { LNCS 15967 },
-                 month = {October},
-                 pages = { 530 -- 540 },
-              }
+@InProceedings{10.1007/978-3-032-04984-1_51,
+author="Wang, Tao and Zhang, Xinlin and Chen, Yuanbin and Zhou, Yuanbo and Zhao, Longxuan and Tan, Tao and Tong, Tong",
+title="Synergy-Guided Regional Supervision of Pseudo Labels for Semi-supervised Medical Image Segmentation",
+booktitle="Medical Image Computing and Computer Assisted Intervention -- MICCAI 2025",
+year="2026",
+publisher="Springer Nature Switzerland",
+address="Daejeon, Korea",
+pages="530--540",
+}
 ```
