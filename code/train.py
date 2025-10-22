@@ -220,7 +220,7 @@ if __name__ == "__main__":
             u_predict = torch.max(out_soft_u, 1, )[1]
             u_mix_predict = torch.max(out_soft_u_mix, 1, )[1]
             pp_outsoft_u = out_soft_u[:,0,:,:,:]
-            pp_outsoft_mix = out_soft_u[:, 0, :, :, :]
+            pp_outsoft_mix = out_soft_u_mix[:, 0, :, :, :]
             diff_pre = ((u_predict == 1) & (u_mix_predict == 0)).to(torch.int32) + ((u_predict == 0) & (u_mix_predict == 1)).to(torch.int32)
             consis_pre = ((u_predict == 0) & (u_mix_predict == 0)).to(torch.int32) + ((u_predict == 1) & (u_mix_predict == 1)).to(torch.int32)
             ignore_pre_u = (pp_outsoft_u > args.tau) & ( pp_outsoft_u < (1- args.tau )).to(torch.int32)
