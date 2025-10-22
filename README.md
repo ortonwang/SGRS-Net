@@ -35,7 +35,7 @@ Our code is origin from [SSL4MIS](https://github.com/HiLab-git/SSL4MIS) and [MC-
 author="Wang, Tao and Zhang, Xinlin and Chen, Yuanbin and Zhou, Yuanbo and Zhao, Longxuan and Tan, Tao and Tong, Tong",
 title="Synergy-Guided Regional Supervision of Pseudo Labels for Semi-supervised Medical Image Segmentation",
 booktitle="Medical Image Computing and Computer Assisted Intervention -- MICCAI 2025",
-year="2026",
+year="2025",
 publisher="Springer Nature Switzerland",
 address="Daejeon, Korea",
 pages="530--540",
