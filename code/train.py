@@ -14,7 +14,7 @@ import torch.optim as optim
 from torchvision import transforms
 import torch.backends.cudnn as cudnn
 from torch.utils.data import DataLoader
-from utils import ramps, losses, metrics, test_patch
+from utils import ramps, losses,  test_patch
 from dataloaders.dataset import *
 from networks.net_factory import net_factory
 from utils.mixmatch_util import mix_match_just_k1
