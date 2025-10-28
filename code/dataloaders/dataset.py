@@ -129,6 +129,86 @@ class LAHeart_no_read(Dataset):
             sample['idx'] = idx
         return sample
 
+class Pancreas_no_read(Dataset):
+    """ Pancreas Dataset """
+    def __init__(self, base_dir=None, split='train', num=None, transform=None,with_idx=False):
+        self._base_dir = base_dir
+        self.transform = transform
+        self.sample_list = []
+        self.with_idx =with_idx
+
+        train_path = self._base_dir+'/train.list'
+        test_path = self._base_dir+'/test.list'
+
+        if split=='train':
+            with open(train_path, 'r') as f:
+                self.image_list = f.readlines()
+        elif split == 'test':
+            with open(test_path, 'r') as f:
+                self.image_list = f.readlines()
+
+        self.image_list = [item.replace('\n','') for item in self.image_list]
+        if num is not None:
+            self.image_list = self.image_list[:num]
+        print("total {} samples".format(len(self.image_list)))
+        self.image_list_data = []
+        for i in range(len(self.image_list)):
+            self.image_list_data.append(
+                h5py.File(self._base_dir + "/Pancreas_h5/" + self.image_list[i] + "_norm.h5", 'r'))
+
+    def __len__(self):
+        return len(self.image_list)
+
+    def __getitem__(self, idx):
+        h5f = self.image_list_data[idx]
+        image = h5f['image'][:]
+        label = h5f['label'][:]
+        sample = {'image': image, 'label': label}
+        if self.transform:
+            sample = self.transform(sample)
+        if self.with_idx:
+            sample['idx'] = idx
+        return sample
+        
+class BraTS2019_no_read(Dataset):
+    def __init__(self, base_dir=None, split='train', num=None, transform=None,with_idx=False):
+        self._base_dir = base_dir
+        self.transform = transform
+        self.sample_list = []
+        self.with_idx = with_idx
+        train_path = self._base_dir + '/train.txt'
+        test_path = self._base_dir+'/val.txt'
+
+        if split == 'train':
+            with open(train_path, 'r') as f:
+                self.image_list = f.readlines()
+        elif split == 'test':
+            with open(test_path, 'r') as f:
+                self.image_list = f.readlines()
+
+        self.image_list = [item.replace('\n', '').split(",")[0] for item in self.image_list]
+        if num is not None:
+            self.image_list = self.image_list[:num]
+        print("total {} samples".format(len(self.image_list)))
+        self.image_list_data = []
+        for i in range(len(self.image_list)):
+            self.image_list_data.append(
+                h5py.File(self._base_dir + "/data/{}.h5".format(self.image_list[i]), 'r'))
+
+    def __len__(self):
+        return len(self.image_list)
+
+    def __getitem__(self, idx):
+        h5f = self.image_list_data[idx]
+        image = h5f['image'][:]
+        label = h5f['label'][:]
+        sample = {'image': image, 'label': label.astype(np.uint8)}
+        if self.transform:
+            sample = self.transform(sample)
+        if self.with_idx:
+            sample['idx'] = idx
+        return sample
+
 
 class Resize(object):
 
