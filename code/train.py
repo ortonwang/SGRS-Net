@@ -48,7 +48,7 @@ parser.add_argument('--num_filtered', type=int, default=12800,
                     help='num of unlabeled embeddings to calculate similarity')
 parser.add_argument('--dice_w', type=float, default=20., help='num of embeddings per class in memory bank')
 parser.add_argument('--ce_w', type=float, default=0.2, help='num of embeddings per class in memory bank')
-parser.add_argument('--tau', type=float, default=0.410, help='num of embeddings per class in memory bank')
+parser.add_argument('--tau', type=float, default=0.425, help='num of embeddings per class in memory bank')
 args = parser.parse_args()
 os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
 snapshot_path = args.root_path + "model/{}_{}_{}_labeled/{}".format(args.dataset_name, args.exp, args.labelnum,
@@ -223,6 +223,7 @@ if __name__ == "__main__":
             pp_outsoft_mix = out_soft_u_mix[:, 0, :, :, :]
             diff_pre = ((u_predict == 1) & (u_mix_predict == 0)).to(torch.int32) + ((u_predict == 0) & (u_mix_predict == 1)).to(torch.int32)
             consis_pre = ((u_predict == 0) & (u_mix_predict == 0)).to(torch.int32) + ((u_predict == 1) & (u_mix_predict == 1)).to(torch.int32)
+            # For the 2-classification task, the confidence level: 0.425 < confidence < 0.575, is equivalent to the entropy greater than 0.296 mentioned in the paper.
             ignore_pre_u = (pp_outsoft_u > args.tau) & ( pp_outsoft_u < (1- args.tau )).to(torch.int32)
             ignore_pre_m = (pp_outsoft_mix > args.tau) & (pp_outsoft_mix < (1 - args.tau)).to(torch.int32)
             ignore_pre = ignore_pre_u + ignore_pre_m  # combine the double  \cup process
